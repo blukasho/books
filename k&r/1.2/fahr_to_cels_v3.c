@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 15:16:21 by blukasho          #+#    #+#             */
-/*   Updated: 2018/11/16 15:21:39 by blukasho         ###   ########.fr       */
+/*   Updated: 2018/11/16 15:32:13 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		main(void)
 	upper = 300;
 	step = 20;
 	fahr = lower;
-	printf(" C     F\n");
+	printf(" F     C\n");
 	while (fahr <= upper)
 	{
 		cels = (5.0 / 9.0) * (fahr - 32);
