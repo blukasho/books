@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cels_to_fahr.c                                     :+:      :+:    :+:   */
+/*   fahr_to_cels_for.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 15:25:13 by blukasho          #+#    #+#             */
-/*   Updated: 2018/11/16 15:53:44 by blukasho         ###   ########.fr       */
+/*   Created: 2018/11/16 15:47:08 by blukasho          #+#    #+#             */
+/*   Updated: 2018/11/16 15:51:06 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,8 @@
 
 int		main(void)
 {
-	float fahr, cels;
-	int lower, upper, step;
-
-	lower = -40;
-	upper = 40;
-	step = 5;
-	cels = lower;
-	printf(" F     C\n");
-	while (cels <= upper)
-	{
-		fahr = (cels * 5.0 / 9.0) + 32;
-		printf("%4.1f %4.0f\n", fahr, cels);
-		cels += step;
-	}
+	int fahr;
+	for (fahr = 0; fahr <= 300; fahr = fahr + 20)
+		printf("%3d %6.1f\n", fahr, (5.0 / 9.0) * (fahr - 32));
 	return (0);
 }
