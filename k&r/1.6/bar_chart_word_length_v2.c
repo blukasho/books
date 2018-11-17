@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bar_chart_word_length.c                            :+:      :+:    :+:   */
+/*   bar_chart_word_length_v2.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/17 17:32:02 by blukasho          #+#    #+#             */
-/*   Updated: 2018/11/17 19:07:35 by blukasho         ###   ########.fr       */
+/*   Created: 2018/11/17 18:31:23 by blukasho          #+#    #+#             */
+/*   Updated: 2018/11/17 19:05:26 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,9 @@ int		main(void)
 	for (i = 0; i < MAX_LEN; ++i)
 		wl[i] = 0;
 	while ((c = getchar()) != EOF)
-	{
 		if (c == ' ' || c == '\n' || c == '\t')
 		{
-			if (l <= MAX_LEN && state == IN)
+			if (state == IN && l <= MAX_LEN)
 				++wl[l - 1];
 			state = l = OUT;
 		}
@@ -37,17 +36,14 @@ int		main(void)
 			state = IN;
 			++l;
 		}
-	}
-	for (i = 1; i <= MAX_LEN; ++i)
-		printf("%3d", i);
+	for (i = 0; i < MAX_LEN; ++i)
+		printf("\\|/");
 	printf("\n");
 	for (state = 0; state < MAX_LEN; ++state)
 	{
-		for (i = 0; i < MAX_LEN; ++i)
-			if (wl[i] > 0 && wl[i]--)
-				printf("  *");
-			else
-				printf("   ");
+		printf("%2d ", state + 1);
+		for (; wl[state] > 0; --wl[state])
+			printf("*");
 		printf("\n");
 	}
 	return (0);
