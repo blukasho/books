@@ -6,13 +6,13 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/17 18:31:23 by blukasho          #+#    #+#             */
-/*   Updated: 2018/11/17 23:22:30 by blukasho         ###   ########.fr       */
+/*   Updated: 2018/11/17 23:26:49 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-#define MAX_LEN 25
+#define MAX_LEN 100
 #define IN 1
 #define OUT 0
 
