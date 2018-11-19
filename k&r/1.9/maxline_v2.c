@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maxline.c                                          :+:      :+:    :+:   */
+/*   maxline_v2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/18 12:30:56 by blukasho          #+#    #+#             */
-/*   Updated: 2018/11/19 19:46:06 by blukasho         ###   ########.fr       */
+/*   Created: 2018/11/19 19:58:40 by blukasho          #+#    #+#             */
+/*   Updated: 2018/11/19 20:16:19 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-#define MAXLINE 82
+#define MAXLINE 81
 
-int			get_line(char line[], int lim);
+int			get_line(char s[], int lim);
 void		copy(char to[], char from[]);
 
 int			main(void)
@@ -30,28 +30,34 @@ int			main(void)
 			max = len;
 			copy(longest, line);
 		}
-	if (max > 0)
-		printf("%s", longest);
+	if (max > 0 && max < MAXLINE)
+		printf("%d\n%s", max, longest);
+	else if (max > 0)
+		printf("%d\n\"%s\"", max, longest);
 	return (0);
 }
 
 int			get_line(char s[], int lim)
 {
-	int c, i;
+	int		c, i;
 
-	for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
+	for (i = 0; i < lim -1 && (c = getchar ()) != EOF && c != '\n'; ++i)
 		s[i] = c;
 	if (c == '\n')
 		s[i++] = c;
 	s[i] = '\0';
+	if (c != '\n')
+		while ((c = getchar()) != EOF && c != '\n')
+			++i;
 	return (i);
 }
 
-void		copy(char to[], char from[])
+void 		copy(char to[], char from[])
 {
-	int i;
+	int		i;
 
-	for (i = 0; from[i] != '\0'; ++i)
-		to[i] = from[i];
+	i = 0;
+	while ((to[i] = from[i]) != '\0')
+		++i;
 	to[i] = '\0';
 }
