@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 16:02:34 by blukasho          #+#    #+#             */
-/*   Updated: 2018/11/21 18:57:10 by blukasho         ###   ########.fr       */
+/*   Updated: 2018/11/22 10:13:05 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #define MAXLINE 1000
 
-int			ft_strstr(char *haystack, char *needle);
+int			ft_strnstr(char *haystack, char *needle, int len);
 void		check_comments(char str[]);
 int			get_line(char str[], int lim);
 void		memdel(char str[]);
@@ -37,16 +37,14 @@ int			main(void)
 	return (0);
 }
 
-int			ft_strstr(char *haystack, char *needle)
+int			ft_strnstr(char *haystack, char *needle, int len)
 {
 	int 	i;
 	int		r;
-	char	*tmp;
 
-	tmp = haystack;
 	r = 0;
 	i = 0;
-	while (*haystack)
+	while (*haystack && len >= 2)
 	{
 		while (needle[i])
 		{
@@ -55,17 +53,16 @@ int			ft_strstr(char *haystack, char *needle)
 			++i;
 		}
 		if (r == 0)
-			return ((char *)haystack - tmp);
+			return (1);
+		--len;
 		i = 0;
 		r = 0;
 		++haystack;
 	}
-	printf("hell\n");
 	return (0);
 }
 
-//hello
-void		check_comments(char str[])//hide comments
+void		check_comments(char str[])
 {
 	int		i;
 
@@ -77,8 +74,20 @@ void		check_comments(char str[])//hide comments
 				str[i++] = 8;
 		++i;
 	}
-	if ((i = ft_strstr(str, "/*")) > 0)
-		printf("%d\n", i);
+	i = 0;
+	while (str[i])
+	{
+		if (ft_strnstr(str, "/*", 2))
+			while (ft_strnstr(str + i, "*/", 2) == 0 && str[i] != '\n')
+				str[i++] = 8;
+		if (str[i] == '*' && str[i + 1] == '/')
+			str[i] = str[i + 1] = 8;
+		++i;
+	}
+	i = 0;
+	if (str[i] == str[i + 1] && str[i] == '*')
+		while (str[i] != '\n')
+			str[i++] = 8;
 }
 
 void		memdel(char str[])
