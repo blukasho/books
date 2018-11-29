@@ -6,12 +6,13 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 14:01:14 by blukasho          #+#    #+#             */
-/*   Updated: 2018/11/29 15:46:11 by blukasho         ###   ########.fr       */
+/*   Updated: 2018/11/29 16:24:51 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <limits.h>
+#include <float.h>
 
 int					main(void)
 {
@@ -46,5 +47,10 @@ int					main(void)
 
 	printf("\nunsigned long min %lu\nunsigned long max %lu\n", u_long_min, u_long_max);
 	printf("signed long min %ld\nsigned long max %ld\n", s_long_min, s_long_max);
+
+	float			float_min = FLT_MIN;
+	float			float_max = FLT_MAX;
+
+	printf("\nfloat min %.10e\nfloat max %.10e\n", float_min, float_max);
 	return (0);
 }
