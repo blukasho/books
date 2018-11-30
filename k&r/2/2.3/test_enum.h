@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 13:13:33 by blukasho          #+#    #+#             */
-/*   Updated: 2018/11/30 13:37:22 by blukasho         ###   ########.fr       */
+/*   Updated: 2018/11/30 13:51:53 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <stdio.h>
 
-enum boolean {false, true};
+enum boolean {false , true};
 
 typedef enum boolean bool;
 

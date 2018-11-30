@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 17:58:08 by blukasho          #+#    #+#             */
-/*   Updated: 2018/11/29 18:03:17 by blukasho         ###   ########.fr       */
+/*   Updated: 2018/11/30 13:59:13 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 int			main(void)
 {
-	char	str[MAX_LEN + 1];
 	int		i, c;
 
 	for (i = 0; (i < MAX_LEN) == ((c = getchar()) != EOF) == (c != '\n'); ++i)
