@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 13:18:09 by blukasho          #+#    #+#             */
-/*   Updated: 2018/11/30 13:22:51 by blukasho         ###   ########.fr       */
+/*   Updated: 2018/11/30 13:39:33 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		main(void)
 {
-	printf("false %d\ntrue %d\n", false, true);
+	bool t = true;
+
+	printf("false %d\ntrue %d\n", false, t);
 	return (0);
 }
