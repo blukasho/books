@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test_enum.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
+/*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/29 17:58:08 by blukasho          #+#    #+#             */
-/*   Updated: 2018/11/30 13:59:13 by blukasho         ###   ########.fr       */
+/*   Created: 2018/11/30 13:13:33 by blukasho          #+#    #+#             */
+/*   Updated: 2018/11/30 13:51:53 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef TEST_ENUM_H
+# define TEST_ENUM_H
+
 #include <stdio.h>
 
-#define MAX_LEN 10
+enum boolean {false , true};
 
-int			main(void)
-{
-	int		i, c;
+typedef enum boolean bool;
 
-	for (i = 0; (i < MAX_LEN) == ((c = getchar()) != EOF) == (c != '\n'); ++i)
-		;
-	printf("i = %d\nc = %d\n", i, c);
-	return (0);
-}
+#endif
